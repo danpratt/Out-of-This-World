@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650B1764198D405000CF0EEA /* SpaceImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B1763198D405000CF0EEA /* SpaceImageViewController.m */; };
 		6525AF5C198B37F200DCFA71 /* Earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6525AF52198B37F200DCFA71 /* Earth.jpg */; };
 		6525AF5D198B37F200DCFA71 /* EinsteinRing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6525AF53198B37F200DCFA71 /* EinsteinRing.jpg */; };
 		6525AF5E198B37F200DCFA71 /* Jupiter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6525AF54198B37F200DCFA71 /* Jupiter.jpg */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		650B1762198D405000CF0EEA /* SpaceImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceImageViewController.h; sourceTree = "<group>"; };
+		650B1763198D405000CF0EEA /* SpaceImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceImageViewController.m; sourceTree = "<group>"; };
 		6525AF52198B37F200DCFA71 /* Earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Earth.jpg; sourceTree = "<group>"; };
 		6525AF53198B37F200DCFA71 /* EinsteinRing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EinsteinRing.jpg; sourceTree = "<group>"; };
 		6525AF54198B37F200DCFA71 /* Jupiter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Jupiter.jpg; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				6525AF66198B381D00DCFA71 /* SpaceObject.h */,
 				6525AF67198B381D00DCFA71 /* SpaceObject.m */,
 				656AFD2519897A19000FBF37 /* Main.storyboard */,
+				650B1762198D405000CF0EEA /* SpaceImageViewController.h */,
+				650B1763198D405000CF0EEA /* SpaceImageViewController.m */,
 				656AFD2819897A19000FBF37 /* Images.xcassets */,
 				656AFD1F19897A19000FBF37 /* Out_of_this_World.xcdatamodeld */,
 				656AFD1819897A19000FBF37 /* Supporting Files */,
@@ -141,9 +146,9 @@
 		656AFD1819897A19000FBF37 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6525AF51198B37F200DCFA71 /* planet-images */,
-				658628FD1989B7FC0086D0E8 /* AstronomicalData.h */,
 				658628FE1989B7FC0086D0E8 /* AstronomicalData.m */,
+				658628FD1989B7FC0086D0E8 /* AstronomicalData.h */,
+				6525AF51198B37F200DCFA71 /* planet-images */,
 				656AFD1919897A19000FBF37 /* Info.plist */,
 				656AFD1A19897A19000FBF37 /* main.m */,
 			);
@@ -279,6 +284,7 @@
 			files = (
 				658628FF1989B7FC0086D0E8 /* AstronomicalData.m in Sources */,
 				6525AF68198B381D00DCFA71 /* SpaceObject.m in Sources */,
+				650B1764198D405000CF0EEA /* SpaceImageViewController.m in Sources */,
 				656AFD1E19897A19000FBF37 /* AppDelegate.m in Sources */,
 				656AFD2119897A19000FBF37 /* Out_of_this_World.xcdatamodeld in Sources */,
 				656AFD1B19897A19000FBF37 /* main.m in Sources */,

@@ -7,6 +7,9 @@
 //
 
 #import "OutSpaceTableViewController.h"
+#import "SpaceImageViewController.h"
+#import "AstronomicalData.h"
+#import "SpaceObject.h"
 
 @interface OutSpaceTableViewController ()
 
@@ -25,16 +28,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSString *planet1 = @"Mercury";
-    NSString *planet2 = @"Venus";
-    NSString *planet3 = @"Earth";
-    NSString *planet4 = @"Mars";
-    NSString *planet5 = @"Jupiter";
-    NSString *planet6 = @"Saturn";
-    NSString *planet7 = @"Uranus";
-    NSString *planet8 = @"Neptune";
+    _planets = [[NSMutableArray alloc] init];
     
-    self.planets = [[NSMutableArray alloc] initWithObjects:planet1, planet2, planet3, planet4, planet5, planet6, planet7, planet8, nil];
+    for (NSMutableDictionary *planetData in [AstronomicalData allKnownPlanets]) {
+        NSString *imageName = [NSString stringWithFormat:@"%@.jpg", planetData[PLANET_NAME]];
+        SpaceObject *planet = [[SpaceObject alloc] initWithData:planetData andImage:[UIImage imageNamed:imageName]];
+        [_planets addObject:planet];
+    }
     
 //    NSMutableDictionary *myDictionary = [[NSMutableDictionary alloc] init];
 //    NSString *redColor = @"red";
@@ -80,14 +80,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    cell.textLabel.text = _planets[indexPath.row];
+    // Configure the cell
+    SpaceObject *planet = [self.planets objectAtIndex:indexPath.row];
     
-    if (indexPath.section == 0) {
-        cell.backgroundColor = [UIColor redColor];
-    } else {
-        cell.backgroundColor = [UIColor blueColor];
-    }
+    cell.textLabel.text = planet.name;
+    cell.detailTextLabel.text = planet.nickName;
+    cell.imageView.image = planet.spaceImage;
+    
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.5 alpha:1.0];
+    
     return cell;
 }
 
@@ -126,14 +129,29 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        NSLog(@"UITableViewCell class");
+        if ([segue.destinationViewController isKindOfClass:[SpaceImageViewController class]]) {
+            NSLog(@"%@", segue);
+            
+            SpaceImageViewController *nextViewController = segue.destinationViewController;
+            NSIndexPath *path = [self.tableView indexPathForCell:sender];
+            SpaceObject *selectedObject = _planets[path.row];
+            nextViewController.spaceObject = selectedObject;
+            
+        }
+    } else {
+        NSLog(@"Not a UITableViewCell class");
+    }
+    
+    
 }
-*/
 
 @end
