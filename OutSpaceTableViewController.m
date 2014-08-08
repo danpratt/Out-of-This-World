@@ -10,6 +10,7 @@
 #import "SpaceImageViewController.h"
 #import "AstronomicalData.h"
 #import "SpaceObject.h"
+#import "SpaceDataViewController.h"
 
 @interface OutSpaceTableViewController ()
 
@@ -35,24 +36,6 @@
         SpaceObject *planet = [[SpaceObject alloc] initWithData:planetData andImage:[UIImage imageNamed:imageName]];
         [_planets addObject:planet];
     }
-    
-//    NSMutableDictionary *myDictionary = [[NSMutableDictionary alloc] init];
-//    NSString *redColor = @"red";
-//    
-//    [myDictionary setObject:redColor forKey:@"firetruck color"];
-//    [myDictionary setObject:@"blue" forKey:@"ocean color"];
-//    [myDictionary setObject:@"white" forKey:@"star color"];
-//    
-//    NSString *blueString = [myDictionary objectForKey:@"ocean color"];
-//    
-//    NSLog(@"%@", myDictionary);
-//    NSLog(@"%@", blueString);
-    
-    NSNumber *myNumber = [NSNumber numberWithInt:5];
-    NSLog(@"%@", myNumber);
-    
-    NSNumber *floatNumber = [NSNumber numberWithFloat:3.14];
-    NSLog(@"%@", floatNumber);
     
 }
 
@@ -93,6 +76,14 @@
     
     return cell;
 }
+
+#pragma mark - UITableView Delegate
+
+-(void) tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"pushToSpaceData" sender:indexPath];
+}
+
+
 
 
 /*
@@ -136,21 +127,33 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    
+    if ([sender isKindOfClass:[NSIndexPath class]]) {
+        if ([segue.destinationViewController isKindOfClass:[SpaceDataViewController class]]) {
+
+            SpaceDataViewController *targetViewController = segue.destinationViewController;
+            NSIndexPath *path = sender;
+            SpaceObject *selectedObject = _planets[path.row];
+            targetViewController.spaceObject = selectedObject;
+        }
+        
+    }
+    
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         NSLog(@"UITableViewCell class");
         if ([segue.destinationViewController isKindOfClass:[SpaceImageViewController class]]) {
-            NSLog(@"%@", segue);
             
             SpaceImageViewController *nextViewController = segue.destinationViewController;
             NSIndexPath *path = [self.tableView indexPathForCell:sender];
             SpaceObject *selectedObject = _planets[path.row];
             nextViewController.spaceObject = selectedObject;
             
+            
         }
-    } else {
-        NSLog(@"Not a UITableViewCell class");
     }
     
+
     
 }
 

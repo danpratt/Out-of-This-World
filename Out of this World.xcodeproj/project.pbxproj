@@ -27,6 +27,7 @@
 		656AFD3519897A1A000FBF37 /* Out_of_this_WorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 656AFD3419897A1A000FBF37 /* Out_of_this_WorldTests.m */; };
 		656AFD4019897BA2000FBF37 /* OutSpaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 656AFD3F19897BA2000FBF37 /* OutSpaceTableViewController.m */; };
 		658628FF1989B7FC0086D0E8 /* AstronomicalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 658628FE1989B7FC0086D0E8 /* AstronomicalData.m */; };
+		65C3FCA61993E18E0011CF39 /* SpaceDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3FCA51993E18E0011CF39 /* SpaceDataViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		656AFD3F19897BA2000FBF37 /* OutSpaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutSpaceTableViewController.m; path = ../OutSpaceTableViewController.m; sourceTree = "<group>"; };
 		658628FD1989B7FC0086D0E8 /* AstronomicalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstronomicalData.h; sourceTree = "<group>"; };
 		658628FE1989B7FC0086D0E8 /* AstronomicalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AstronomicalData.m; sourceTree = "<group>"; };
+		65C3FCA41993E18E0011CF39 /* SpaceDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceDataViewController.h; sourceTree = "<group>"; };
+		65C3FCA51993E18E0011CF39 /* SpaceDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceDataViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 				656AFD2519897A19000FBF37 /* Main.storyboard */,
 				650B1762198D405000CF0EEA /* SpaceImageViewController.h */,
 				650B1763198D405000CF0EEA /* SpaceImageViewController.m */,
+				65C3FCA41993E18E0011CF39 /* SpaceDataViewController.h */,
+				65C3FCA51993E18E0011CF39 /* SpaceDataViewController.m */,
 				656AFD2819897A19000FBF37 /* Images.xcassets */,
 				656AFD1F19897A19000FBF37 /* Out_of_this_World.xcdatamodeld */,
 				656AFD1819897A19000FBF37 /* Supporting Files */,
@@ -283,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				658628FF1989B7FC0086D0E8 /* AstronomicalData.m in Sources */,
+				65C3FCA61993E18E0011CF39 /* SpaceDataViewController.m in Sources */,
 				6525AF68198B381D00DCFA71 /* SpaceObject.m in Sources */,
 				650B1764198D405000CF0EEA /* SpaceImageViewController.m in Sources */,
 				656AFD1E19897A19000FBF37 /* AppDelegate.m in Sources */,
